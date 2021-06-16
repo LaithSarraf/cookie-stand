@@ -1,6 +1,6 @@
 'use strict';
 
-// let catFrom = document.getElementById('catForm')
+let cities = document.getElementById('newCity')
 let mainTable = document.getElementById('salesTable');
 
 
@@ -224,7 +224,7 @@ let OperationHours = ['6am', '7am',
           this.total = 0;
           
         }
-//////////////////////////////////////////////////////////////
+/
         
         cookiesStand.prototype.render = function(){
           let tablesRow= document.createElement('tr')
@@ -243,8 +243,7 @@ let OperationHours = ['6am', '7am',
          storeDailyLocationTotal.textContent = this.total
          }
          
-        //////////////////////////////////////////////////////////////////////
-
+     
       function tablesHeaderRender(){
         let hoursTables = document.createElement('tr')
         mainTable.appendChild(hoursTables);
@@ -265,6 +264,7 @@ let OperationHours = ['6am', '7am',
     }
     /////////////////////////////////////////////////////////////////
     tablesHeaderRender();
+
       // let totalDailyCookies = document.createElement('th');
       // totalDailyCookies.textContent = this.total;
       // tablesRow.appendChild(totalDailyCookies);
@@ -279,7 +279,7 @@ let OperationHours = ['6am', '7am',
 
       //   let saleslistElement = document.createElement('ul');
       //   liststArticleElement.appendChild(saleslistElement);
-    
+
       //   for(let i = 0; i < this.cookiesSoldHour.length ; i++) {
       //     let listItem = document.createElement('li');
       //     saleslistElement.appendChild(listItem);
@@ -297,6 +297,8 @@ let OperationHours = ['6am', '7am',
           this.cookiesSoldHour.push(avarage)
           this.total += avarage
     }}
+
+
 
 
 
@@ -321,19 +323,20 @@ let OperationHours = ['6am', '7am',
 
 
 
-      // function formSubmission(event) {
-        // event.preventDefault();
-        //   let name = event.target.kittenName.value;
-        //   let breed = event.target.kittenName.value;
-        //   let likes = event.target.kittenName.value.split(',');
-        //   let img = event.target.kittenName.value;
-        //   let cat = event.target.kittenName.value;
-        //   let kids = event.target.kittenName.value;
-        //   let dogs = event.target.kittenName.value;
-        //   let breed= event.target.isGoodWithDogs.checked;
+  
+      
+
+      function formSubmission(event) {
+        event.preventDefault();
+          let name = event.target.name.value;
+          let min = event.target.minNum.value;
+          let max = event.target.maxNum.value;
+          let avg = event.target.avgCookies.value;
+         
+
+        let newCities = new cookiesStand(name, min, max, avg)
+        amman.cooHour();
+        amman.render();
+        }
         
-        // let newCat  = new cat(name, 0, likes, kids, cat, dog, img, breed)
-        // newCat.getAge(3, 12)
-        // newCat.reder();
-        // }
-        // catFrom.addEventListener('submit', formSubmission)
+        cities.addEventListener('submit', formSubmission);
