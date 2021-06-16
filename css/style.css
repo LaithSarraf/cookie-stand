@@ -1,0 +1,11 @@
+h2 {
+    font-size: 23px;
+    font-weight: bold;
+}
+
+ul {
+font-size: 16px;
+font-weight: bold;
+list-style: circle;
+font-style: italic;
+}
